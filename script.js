@@ -1,138 +1,161 @@
-const economyEl = document.getElementById("economy");
-const environmentEl = document.getElementById("environment");
-const foodEl = document.getElementById("food");
-const energyEl = document.getElementById("energy");
-const messageEl = document.getElementById("message");
+const economia = document.getElementById("economia");
+const meioAmbiente = document.getElementById("meioAmbiente");
+const producao = document.getElementById("producao");
+const energia = document.getElementById("energia");
 
-const buttons = document.querySelectorAll(".action-btn");
+const textoMensagem = document.getElementById("textoMensagem");
 
-let game = {
-  economy: 50,
-  environment: 50,
-  food: 50,
-  energy: 50
+const botoes = document.querySelectorAll(".acao-btn");
+
+let jogo = {
+  economia: 50,
+  meioAmbiente: 50,
+  producao: 50,
+  energia: 50
 };
 
-function updateUI(){
-  economyEl.textContent = game.economy;
-  environmentEl.textContent = game.environment;
-  foodEl.textContent = game.food;
-  energyEl.textContent = game.energy;
+function atualizarTela(){
+
+  economia.textContent = jogo.economia;
+  meioAmbiente.textContent = jogo.meioAmbiente;
+  producao.textContent = jogo.producao;
+  energia.textContent = jogo.energia;
+
 }
 
-function limitStats(){
-  game.economy = Math.max(0, Math.min(100, game.economy));
-  game.environment = Math.max(0, Math.min(100, game.environment));
-  game.food = Math.max(0, Math.min(100, game.food));
-  game.energy = Math.max(0, Math.min(100, game.energy));
+function limitarValores(){
+
+  jogo.economia =
+  Math.max(0, Math.min(100, jogo.economia));
+
+  jogo.meioAmbiente =
+  Math.max(0, Math.min(100, jogo.meioAmbiente));
+
+  jogo.producao =
+  Math.max(0, Math.min(100, jogo.producao));
+
+  jogo.energia =
+  Math.max(0, Math.min(100, jogo.energia));
+
 }
 
-buttons.forEach(button => {
+botoes.forEach(botao => {
 
-  button.addEventListener("click", () => {
+  botao.addEventListener("click", () => {
 
-    const action = button.dataset.action;
+    const acao = botao.dataset.action;
 
-    switch(action){
+    switch(acao){
 
       case "solar":
-        game.energy += 20;
-        game.environment += 10;
-        game.economy += 5;
 
-        messageEl.textContent =
-        "A energia solar fortaleceu o campo com tecnologia limpa e sustentável.";
+        jogo.energia += 20;
+        jogo.meioAmbiente += 10;
+        jogo.economia += 5;
+
+        textoMensagem.textContent =
+        "A energia solar reduziu impactos ambientais e modernizou o campo.";
+
       break;
 
-      case "forest":
-        game.environment += 20;
-        game.food += 5;
+      case "floresta":
 
-        messageEl.textContent =
-        "As florestas preservadas protegeram os rios, o clima e a biodiversidade.";
+        jogo.meioAmbiente += 20;
+        jogo.producao += 5;
+
+        textoMensagem.textContent =
+        "A preservação das florestas protegeu rios, fauna e biodiversidade.";
+
       break;
 
-      case "technology":
-        game.food += 20;
-        game.economy += 15;
-        game.energy += 5;
+      case "tecnologia":
 
-        messageEl.textContent =
-        "A inovação agrícola aumentou a produtividade com eficiência tecnológica.";
+        jogo.producao += 20;
+        jogo.economia += 15;
+        jogo.energia += 5;
+
+        textoMensagem.textContent =
+        "Tecnologia agrícola aumentou produtividade e eficiência.";
+
       break;
 
-      case "water":
-        game.environment += 15;
-        game.food += 10;
+      case "rios":
 
-        messageEl.textContent =
-        "A recuperação das nascentes garantiu água limpa e produção sustentável.";
+        jogo.meioAmbiente += 15;
+        jogo.producao += 10;
+
+        textoMensagem.textContent =
+        "Os rios recuperados garantem água limpa e agricultura sustentável.";
+
       break;
 
-      case "export":
-        game.economy += 20;
-        game.food += 5;
-        game.environment -= 5;
+      case "exportacao":
 
-        messageEl.textContent =
-        "As exportações cresceram e fortaleceram a economia do agronegócio.";
+        jogo.economia += 20;
+        jogo.producao += 5;
+        jogo.meioAmbiente -= 5;
+
+        textoMensagem.textContent =
+        "As exportações fortaleceram o agronegócio e movimentaram a economia.";
+
       break;
 
-      case "education":
-        game.economy += 10;
-        game.environment += 10;
-        game.food += 10;
+      case "educacao":
 
-        messageEl.textContent =
+        jogo.economia += 10;
+        jogo.meioAmbiente += 10;
+        jogo.producao += 10;
+
+        textoMensagem.textContent =
         "Produtores capacitados utilizam técnicas modernas e sustentáveis.";
+
       break;
+
     }
 
-    limitStats();
-    updateUI();
+    limitarValores();
 
-    checkVictory();
+    atualizarTela();
+
+    verificarVitoria();
+
   });
 
 });
 
-function checkVictory(){
+function verificarVitoria(){
 
   if(
-    game.economy >= 90 &&
-    game.environment >= 90 &&
-    game.food >= 90 &&
-    game.energy >= 90
+    jogo.economia >= 90 &&
+    jogo.meioAmbiente >= 90 &&
+    jogo.producao >= 90 &&
+    jogo.energia >= 90
   ){
 
-    messageEl.innerHTML =
-    "🏆 Parabéns! Você criou um modelo de agronegócio moderno, sustentável e essencial para o futuro da humanidade.";
+    textoMensagem.innerHTML =
+    "🏆 Você construiu um agro moderno, tecnológico e sustentável!";
 
-    confettiEffect();
+    document.body.style.boxShadow =
+    "inset 0 0 120px rgba(34,197,94,0.5)";
   }
 
-  if(game.environment <= 15){
+  if(jogo.meioAmbiente <= 15){
 
-    messageEl.innerHTML =
-    "⚠️ O meio ambiente está em risco. Produzir sem sustentabilidade compromete o futuro.";
+    textoMensagem.innerHTML =
+    "⚠️ O meio ambiente está em risco. Equilibre produção e preservação.";
   }
 
 }
 
-function confettiEffect(){
-
-  document.body.style.boxShadow =
-  "inset 0 0 120px rgba(31,184,106,0.5)";
-
-}
-
-document.getElementById("startBtn").addEventListener("click", () => {
+document
+.getElementById("startBtn")
+.addEventListener("click", () => {
 
   window.scrollTo({
-    top: 650,
-    behavior: "smooth"
+    top:650,
+    behavior:"smooth"
   });
 
 });
 
-updateUI();
+atualizarTela();
