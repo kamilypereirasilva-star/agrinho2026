@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Agro Forte • Futuro Sustentável</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="background-overlay"></div>
+
+  <header class="hero">
+    <div class="hero-content">
+      <h1>🌱 Agro Forte</h1>
+      <h2>Futuro Sustentável</h2>
+
+      <p>
+        Produza alimentos, fortaleça a economia e preserve o meio ambiente.
+        Encontre o equilíbrio entre tecnologia, natureza e desenvolvimento.
+      </p>
+
+      <button id="startBtn">Começar Jornada</button>
+    </div>
+  </header>
+
+  <main class="game-container">
+
+    <section class="status-panel">
+      <div class="card">
+        <span>💰 Economia</span>
+        <h3 id="economy">50</h3>
+      </div>
+
+      <div class="card">
+        <span>🌿 Sustentabilidade</span>
+        <h3 id="environment">50</h3>
+      </div>
+
+      <div class="card">
+        <span>🍎 Produção de Alimentos</span>
+        <h3 id="food">50</h3>
+      </div>
+
+      <div class="card">
+        <span>⚡ Energia Limpa</span>
+        <h3 id="energy">50</h3>
+      </div>
+    </section>
+
+    <section class="scene-section">
+
+      <div class="scene-card">
+        <div class="scene-image city"></div>
+        <div class="scene-info">
+          <h3>Cidade Inteligente</h3>
+          <p>
+            O agro impulsiona empregos, tecnologia e abastecimento urbano.
+          </p>
+        </div>
+      </div>
+
+      <div class="scene-card">
+        <div class="scene-image farm"></div>
+        <div class="scene-info">
+          <h3>Campo Tecnológico</h3>
+          <p>
+            Agricultura moderna com drones, energia solar e produção eficiente.
+          </p>
+        </div>
+      </div>
+
+      <div class="scene-card">
+        <div class="scene-image nature"></div>
+        <div class="scene-info">
+          <h3>Natureza Preservada</h3>
+          <p>
+            Rios limpos, árvores e biodiversidade protegida garantem o futuro.
+          </p>
+        </div>
+      </div>
+
+    </section>
+
+    <section class="actions">
+
+      <h2>Escolha uma ação estratégica</h2>
+
+      <div class="buttons-grid">
+
+        <button class="action-btn" data-action="solar">
+          ☀️ Investir em Energia Solar
+        </button>
+
+        <button class="action-btn" data-action="forest">
+          🌳 Preservar Florestas
+        </button>
+
+        <button class="action-btn" data-action="technology">
+          🚜 Expandir Tecnologia Agrícola
+        </button>
+
+        <button class="action-btn" data-action="water">
+          💧 Recuperar Rios e Nascentes
+        </button>
+
+        <button class="action-btn" data-action="export">
+          📦 Aumentar Exportações
+        </button>
+
+        <button class="action-btn" data-action="education">
+          🎓 Capacitar Produtores
+        </button>
+
+      </div>
+
+    </section>
+
+    <section class="message-box">
+      <h2>Central de Sustentabilidade</h2>
+      <p id="message">
+        O equilíbrio entre produção e preservação garante um futuro forte para todos.
+      </p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>
+      Agro Forte • Tecnologia • Sustentabilidade • Futuro Verde
+    </p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
