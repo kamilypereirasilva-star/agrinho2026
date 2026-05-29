@@ -1,118 +1,143 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Agro Forte • Futuro Sustentável</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="style.css" />
+  <title>Agro Forte - Futuro Sustentável</title>
+
+  <link rel="stylesheet" href="style.css">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-  <div class="background-overlay"></div>
+  <div class="overlay"></div>
 
   <header class="hero">
+
     <div class="hero-content">
+
       <h1>🌱 Agro Forte</h1>
+
       <h2>Futuro Sustentável</h2>
 
       <p>
-        Produza alimentos, fortaleça a economia e preserve o meio ambiente.
-        Encontre o equilíbrio entre tecnologia, natureza e desenvolvimento.
+        O agronegócio impulsiona a economia, alimenta milhões de pessoas
+        e pode crescer junto da preservação ambiental.
       </p>
 
-      <button id="startBtn">Começar Jornada</button>
+      <button id="startBtn">
+        Iniciar Jogo
+      </button>
+
     </div>
+
   </header>
 
-  <main class="game-container">
+  <main class="container">
 
-    <section class="status-panel">
-      <div class="card">
+    <section class="status-area">
+
+      <div class="status-card">
         <span>💰 Economia</span>
-        <h3 id="economy">50</h3>
+        <h3 id="economia">50</h3>
       </div>
 
-      <div class="card">
-        <span>🌿 Sustentabilidade</span>
-        <h3 id="environment">50</h3>
+      <div class="status-card">
+        <span>🌿 Meio Ambiente</span>
+        <h3 id="meioAmbiente">50</h3>
       </div>
 
-      <div class="card">
-        <span>🍎 Produção de Alimentos</span>
-        <h3 id="food">50</h3>
+      <div class="status-card">
+        <span>🍎 Produção</span>
+        <h3 id="producao">50</h3>
       </div>
 
-      <div class="card">
+      <div class="status-card">
         <span>⚡ Energia Limpa</span>
-        <h3 id="energy">50</h3>
+        <h3 id="energia">50</h3>
       </div>
+
     </section>
 
-    <section class="scene-section">
+    <section class="cards-section">
 
-      <div class="scene-card">
-        <div class="scene-image city"></div>
-        <div class="scene-info">
-          <h3>Cidade Inteligente</h3>
+      <div class="image-card">
+
+        <div class="card-image cidade"></div>
+
+        <div class="card-info">
+          <h3>Cidade e Campo</h3>
+
           <p>
-            O agro impulsiona empregos, tecnologia e abastecimento urbano.
+            O agro abastece cidades, gera empregos e fortalece a economia.
           </p>
         </div>
+
       </div>
 
-      <div class="scene-card">
-        <div class="scene-image farm"></div>
-        <div class="scene-info">
-          <h3>Campo Tecnológico</h3>
+      <div class="image-card">
+
+        <div class="card-image agro"></div>
+
+        <div class="card-info">
+          <h3>Tecnologia no Campo</h3>
+
           <p>
-            Agricultura moderna com drones, energia solar e produção eficiente.
+            Agricultura moderna com inovação, drones e energia solar.
           </p>
         </div>
+
       </div>
 
-      <div class="scene-card">
-        <div class="scene-image nature"></div>
-        <div class="scene-info">
+      <div class="image-card">
+
+        <div class="card-image natureza"></div>
+
+        <div class="card-info">
           <h3>Natureza Preservada</h3>
+
           <p>
-            Rios limpos, árvores e biodiversidade protegida garantem o futuro.
+            Rios limpos, árvores e biodiversidade garantem um futuro saudável.
           </p>
         </div>
+
       </div>
 
     </section>
 
-    <section class="actions">
+    <section class="acoes">
 
-      <h2>Escolha uma ação estratégica</h2>
+      <h2>Escolha uma estratégia</h2>
 
       <div class="buttons-grid">
 
-        <button class="action-btn" data-action="solar">
-          ☀️ Investir em Energia Solar
+        <button class="acao-btn" data-action="solar">
+          ☀️ Instalar Energia Solar
         </button>
 
-        <button class="action-btn" data-action="forest">
+        <button class="acao-btn" data-action="floresta">
           🌳 Preservar Florestas
         </button>
 
-        <button class="action-btn" data-action="technology">
-          🚜 Expandir Tecnologia Agrícola
+        <button class="acao-btn" data-action="tecnologia">
+          🚜 Investir em Tecnologia
         </button>
 
-        <button class="action-btn" data-action="water">
-          💧 Recuperar Rios e Nascentes
+        <button class="acao-btn" data-action="rios">
+          💧 Recuperar Rios
         </button>
 
-        <button class="action-btn" data-action="export">
-          📦 Aumentar Exportações
+        <button class="acao-btn" data-action="exportacao">
+          📦 Expandir Exportações
         </button>
 
-        <button class="action-btn" data-action="education">
+        <button class="acao-btn" data-action="educacao">
           🎓 Capacitar Produtores
         </button>
 
@@ -120,21 +145,27 @@
 
     </section>
 
-    <section class="message-box">
-      <h2>Central de Sustentabilidade</h2>
-      <p id="message">
-        O equilíbrio entre produção e preservação garante um futuro forte para todos.
+    <section class="mensagem">
+
+      <h2>Central Sustentável</h2>
+
+      <p id="textoMensagem">
+        Mantenha o equilíbrio entre produção e preservação ambiental.
       </p>
+
     </section>
 
   </main>
 
   <footer>
+
     <p>
       Agro Forte • Tecnologia • Sustentabilidade • Futuro Verde
     </p>
+
   </footer>
 
   <script src="script.js"></script>
+
 </body>
 </html>
